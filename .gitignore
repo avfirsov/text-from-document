@@ -2,6 +2,7 @@
 /out-tsc
 .codebuddy
 /dist
+.idea
 
 /node_modules
 npm-debug.log*
