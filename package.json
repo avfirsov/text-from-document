@@ -1,0 +1,26 @@
+{
+  "name": "textFromDoc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "push": "npm publish --access public"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/mime-types": "^2.1.4",
+    "@types/node": "^22.7.4",
+    "@types/pdf-parse": "^1.1.4",
+    "@types/textract": "^2.4.5",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "markdown-it": "^14.1.0",
+    "mime-types": "^2.1.35",
+    "pdf-parse": "^1.1.1",
+    "textract": "^2.5.0",
+    "xlsx": "^0.18.5"
+  }
+}
