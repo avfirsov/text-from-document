@@ -5,6 +5,7 @@ import csvParse from "csv-parser";
 import textract from "textract";
 import MarkdownIt from "markdown-it";
 import { getMimeType } from "./utils.js";
+import yaml from "js-yaml";
 import https from 'https';
 import http from 'http';
 import { Buffer } from 'buffer';
@@ -58,6 +59,12 @@ export async function fromBuffer(
                 stream.on("end", () => resolve(csvText));
                 stream.on("error", () => reject("Ошибка при чтении CSV файла."));
             });
+        case "application/json":
+            return JSON.stringify(JSON.parse(buffer.toString("utf8")), null, 2);
+        case "application/x-yaml":
+        case "text/yaml":
+        case "text/x-yaml":
+            return yaml.dump(yaml.load(buffer.toString("utf8")));
         default:
             throw new Error("Формат файла не поддерживается.");
     }
